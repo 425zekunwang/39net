@@ -17,7 +17,7 @@ class Crawler_39Net:
         self.wander_rbq=RBQ_Client("39net_wander")
         self.tasks_rbq=RBQ_Client("39net_tasks")
 
-        self.rege_expr="https?://.*39\.net/a/\d+/\d+\.html"
+        self.rege_expr="https?://.*39\.net/\w+/\d+/\w+\.html"
         self.wander_bloom=BloomFilter("wander",1000_000_000, 5)
         self.tasks_bloom=BloomFilter("tasks",1000_000_000, 5)
 

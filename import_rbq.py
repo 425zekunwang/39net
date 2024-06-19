@@ -17,7 +17,7 @@ class RBQ_Client:
                                              )
         self.connection = pika.BlockingConnection(self.rbq)
         self.channel = self.connection.channel()
-        self.channel.basic_qos()
+        self.channel.basic_qos(prefetch_count=80)
         self.channel.queue_declare(queue=self.queue_name,durable=True)
 
     def publish_message(self, message):
